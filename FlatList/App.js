@@ -30,9 +30,8 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
-                This is test for FlatList practice
+                trying to load menu next
               </Text>
             </View>
             <Menu />
