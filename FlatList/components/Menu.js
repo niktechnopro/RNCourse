@@ -20,11 +20,11 @@ class Menu extends Component{
 
     onDishSelect(dishId) {
         const newDish = this.state.dishes.filter(value => value.id === dishId);
-        this.setState({selectedDish: newDish});
+        this.setState({selectedDish: newDish[0]});
     }
 
     renderMenuItem = ({item, index}) => {
-        console.log(item)
+        console.log("item", item)
         return(
             <ListItem
                 leftAvatar={{ source: { uri: item.image } }}
