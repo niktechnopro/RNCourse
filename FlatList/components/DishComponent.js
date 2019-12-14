@@ -37,12 +37,12 @@ export class DishDetail extends Component{
     }
 
     static navigationOptions = {
-        title: 'DishDetail'
+        title: 'Dish details'
     };
 
     componentDidMount = () => {
         const params = this.props.navigation.getParam("selectedDish", "");
-        console.log("componentDidMount: ", this.props.navigation.getParam("selectedDish", ""));
+        // console.log("componentDidMount: ", this.props.navigation.getParam("selectedDish", ""));
         this.setState({selectedDish: params})
     }
 
