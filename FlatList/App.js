@@ -15,29 +15,39 @@ import {
   Text,
 } from 'react-native';
 import Menu from "./components/Menu";
+import { DishDetail } from "./components/DishComponent";
+
+//navigation
+import { createStackNavigator } from "react-navigation-stack";
+import { createAppContainer } from "react-navigation";
+
+
+const MainNavigator = createStackNavigator({
+    Menu: { screen: Menu },
+    DishDetail: { screen: DishDetail }
+  },
+  {
+    initialRouteName: "Menu",
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: "#512DA8"
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        color: "#fff"
+      }
+    }
+})
+
+const AppNavigator = createAppContainer(MainNavigator);
+
 
 const App: () => React$Node = () => {
   return (
     <>
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionDescription}>
-                trying to load menu next
-              </Text>
-            </View>
-            <Menu />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <View style={styles.body}>
+        <AppNavigator />
+      </View>
     </>
   );
 };
@@ -46,12 +56,12 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: '#fff',
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
   body: {
+    flex: 1,
+    height: "100%",
     backgroundColor: "#fff",
+    borderWidth: 2,
+    borderColor: "green"
   },
   sectionContainer: {
     marginTop: 32,

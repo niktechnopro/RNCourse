@@ -7,24 +7,30 @@ import {
 } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { DISHES } from '../assets/dishes';
-import { DishDetail } from './DishComponent';
 
 class Menu extends Component{
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
             dishes: DISHES,
             selectedDish: null
         }
     }
 
+    static navigationOptions = {
+        title: 'Menu'
+    };
+
     onDishSelect(dishId) {
         const newDish = this.state.dishes.filter(value => value.id === dishId);
-        this.setState({selectedDish: newDish[0]});
+        this.setState({selectedDish: newDish[0]},()=>{
+            console.log("selectedDish: ", this.state.selectedDish, this.props);
+            //navigate to DishDetails
+            this.props.navigation.navigate("DishDetail");
+        });
     }
 
     renderMenuItem = ({item, index}) => {
-        console.log("item", item)
         return(
             <ListItem
                 leftAvatar={{ source: { uri: item.image } }}
@@ -39,7 +45,7 @@ class Menu extends Component{
    
     render(){
         return(
-            <View style={{flex: 1}}>
+            <View style={{ flex: 1 }}>
                 <View
                 style={{flex: 1}}
                 >
@@ -49,9 +55,6 @@ class Menu extends Component{
                     renderItem={this.renderMenuItem}
                     />
                 </View>
-                <DishDetail 
-                    selectedDish = {this.state.selectedDish}
-                />
             </View>
         );
     }
