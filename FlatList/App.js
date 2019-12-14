@@ -60,8 +60,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: "100%",
     backgroundColor: "#fff",
-    borderWidth: 2,
-    borderColor: "green"
   },
   sectionContainer: {
     marginTop: 32,

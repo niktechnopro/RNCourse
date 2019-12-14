@@ -3,20 +3,19 @@ import {
     View,
     Text,
     FlatList, 
-    StyleSheet
+    StyleSheet,
+    Image
 } from 'react-native';
 import { Card } from 'react-native-elements';
-import { DISHES } from '../assets/dishes';
 
 function RenderDish(props){
     const dish = props.dish;
     if(dish !== null){
-        let img = "../"+dish.image;
         return(
             <Card
             featuredTitle={dish.name}
-            image={{image: { uri: "..assets/elaicheesecake.png" }}}
-                >
+            image={require("../assets/uthappizza.png")}
+            >
                 <Text style={{margin: 30}}>{dish.description}</Text>
             </Card>
         )
@@ -33,7 +32,7 @@ export class DishDetail extends Component{
     constructor(props){
         super();
         this.state = {
-
+            selectedDish: null
         }
     }
 
@@ -41,10 +40,15 @@ export class DishDetail extends Component{
         title: 'DishDetail'
     };
 
+    componentDidMount = () => {
+        const params = this.props.navigation.getParam("selectedDish", "");
+        console.log("componentDidMount: ", this.props.navigation.getParam("selectedDish", ""));
+        this.setState({selectedDish: params})
+    }
+
     render(){
         return(
-            // <RenderDish dish={this.props.selectedDish} />
-            <Text>Something there</Text>
+            <RenderDish dish={this.state.selectedDish} />
         )
     }
 }

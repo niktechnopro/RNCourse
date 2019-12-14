@@ -24,9 +24,8 @@ class Menu extends Component{
     onDishSelect(dishId) {
         const newDish = this.state.dishes.filter(value => value.id === dishId);
         this.setState({selectedDish: newDish[0]},()=>{
-            console.log("selectedDish: ", this.state.selectedDish, this.props);
             //navigate to DishDetails
-            this.props.navigation.navigate("DishDetail");
+            this.props.navigation.navigate("DishDetail", {selectedDish: this.state.selectedDish});
         });
     }
 
