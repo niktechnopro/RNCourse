@@ -46,7 +46,6 @@ class Menu extends Component{
     // }
     render(){
         return(
-            // <View style={{ flex: 1, borderColor: "green", borderWidth: 4 }}>
                 <View
                     style={{flex: 1, backgroundColor: "#e8eaed"}}
                 >
@@ -56,7 +55,6 @@ class Menu extends Component{
                     renderItem={this.renderMenuItem}
                     />
                 </View>
-            // </View>
         );
     }
     

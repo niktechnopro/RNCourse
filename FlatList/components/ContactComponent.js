@@ -14,6 +14,9 @@ export default class Contact extends Component{
     render(){
         return(
             <View style={{flex: 1, backgroundColor: "#e8eaed"}}>
+                <View style={{backgroundColor: "#083880",}}>
+                    <Text style={{fontSize: 21, color: "#fff", margin: 14}}>Contact</Text>
+                </View>
                 <Card
                     title="Contact Information"
                     titleStyle={{textAlign: "center", fontSize: 21, fontWeight: "bold" }}

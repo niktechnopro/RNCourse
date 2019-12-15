@@ -44,7 +44,10 @@ export default class Home extends Component {
     render() {
         
         return(
-            <View>
+            <View style={{flex: 1}}>
+                <View style={{backgroundColor: "#083880",}}>
+                    <Text style={{fontSize: 21, color: "#fff", margin: 14}}>Home</Text>
+                </View>
                 <ScrollView>
                     <RenderItem item={this.state.dishes.filter((dish) => dish.featured)[0]} />
                     <RenderItem item={this.state.promotions.filter((promo) => promo.featured)[0]} />
