@@ -12,7 +12,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import Settings from "./components/Settings";
+import Contact from "./components/Contact";
 import MenuContainer from "./components/MenuContainer";
 import Home from "./components/Home";
 
@@ -24,10 +24,10 @@ import { createAppContainer } from "react-navigation";
 const MyDrawerNavigator = createDrawerNavigator({
     Home: { screen: Home },//not really need navigationOptions, because we use static inside component
     Menu: { screen: MenuContainer },
-    Settings: { screen: Settings,
+    Contact: { screen: Contact,
       navigationOptions: {
-        title: 'Settings',
-        drawerLabel: 'Settings'
+        title: 'Contact',
+        drawerLabel: 'Contact Us'
       }, 
     },
   },
@@ -45,7 +45,6 @@ const App: () => React$Node = () => {
   return (
     <>
       <View style={styles.body}>
-        {/* <MenuContainer /> */}
         <MyApp />
       </View>
     </>

@@ -25,7 +25,7 @@ export default class Home extends Component{
         return(
             <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
                 <Text style={{fontSize: 50}}>Home Screen</Text>
-                <View style={{position: "absolute", top: 25, right: 25}}>
+                <View style={{position: "absolute", top: 10, right: 25}}>
                     <Icon
                         raised
                         name='bars'

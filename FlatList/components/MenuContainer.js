@@ -46,7 +46,7 @@ export default class MenuContainer extends Component{
         return(
             <View style={{ flex: 1 }}>
                 <AppNavigator />
-                <View style={{position: "absolute", top: 25, right: 25}}>
+                <View style={{position: "absolute", top: 10, right: 25}}>
                     <Icon
                         raised
                         name='bars'
