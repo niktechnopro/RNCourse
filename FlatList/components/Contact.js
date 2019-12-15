@@ -13,7 +13,7 @@ export default class Contact extends Component{
 
     render(){
         return(
-            <View>
+            <View style={{flex: 1, backgroundColor: "#e8eaed"}}>
                 <Card
                     title="Contact Information"
                     titleStyle={{textAlign: "center", fontSize: 21, fontWeight: "bold" }}
@@ -25,12 +25,12 @@ export default class Contact extends Component{
                     <Text style={styles.insideText}>Fax: +852 8765 4321</Text>
                     <Text style={styles.insideText}>Email:confusion@food.net</Text>
                 </Card>
-                <View style={{position: "absolute", top: 10, right: 25}}>
+                <View style={{position: "absolute", bottom: 10, right: 25}}>
                     <Icon
                         raised
                         name='bars'
                         type='font-awesome'
-                        color='#f50'
+                        color='#85888c'
                         onPress={() => this.props.navigation.toggleDrawer()} />
                 </View>
             </View>

@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 import {
     View,
-    Text,
-    FlatList, 
-    StyleSheet,
-    Image
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 //components
 import Menu from "./Menu";
 import { DishDetail } from "./DishComponent";
-import Home from "./Home";
 
 //navigation
 import { createStackNavigator } from "react-navigation-stack";
@@ -26,8 +21,12 @@ const MainNavigator = createStackNavigator(
         initialRouteName: 'Menu',
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#f45fff',
-            }
+                backgroundColor: '#083880',
+            },
+            headerTintColor: {
+                color: "#fff"
+            },
+            headerTintColor: '#ffffff',//font color for stack navigator
         }
     }
 );
@@ -44,14 +43,14 @@ export default class MenuContainer extends Component{
 
     render(){
         return(
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, backgroundColor: "#e8eaed" }}>
                 <AppNavigator />
-                <View style={{position: "absolute", top: 10, right: 25}}>
+                <View style={{position: "absolute", bottom: 10, right: 25}}>
                     <Icon
                         raised
                         name='bars'
                         type='font-awesome'
-                        color='#f50'
+                        color='#85888c'
                         onPress={() => this.props.navigation.toggleDrawer()} />
                 </View>
             </View>

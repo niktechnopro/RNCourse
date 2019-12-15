@@ -32,9 +32,17 @@ const MyDrawerNavigator = createDrawerNavigator({
     },
   },
   {
-    drawerWidth: 150,//this is a drawer config
-    drawerBackgroundColor: "#D1C4E9",
-    drawerType: "front" //default
+    drawerWidth: 230,//this is a drawer config
+    drawerBackgroundColor: "#dae4f3",
+    drawerType: "front", //default
+    contentOptions:{
+      activeTintColor:'#0f1013',
+      inactiveTintColor:'#000',
+      labelStyle:{
+        fontFamily:'Verdana',
+        fontSize: 21
+      }
+    }
   }
 );
 

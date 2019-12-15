@@ -50,7 +50,7 @@ class Menu extends Component{
         return(
             // <View style={{ flex: 1, borderColor: "green", borderWidth: 4 }}>
                 <View
-                    style={{flex: 1}}
+                    style={{flex: 1, backgroundColor: "#e8eaed"}}
                 >
                     <FlatList
                     data={this.state.dishes}
