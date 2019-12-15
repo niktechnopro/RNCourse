@@ -8,6 +8,10 @@ import { Icon } from 'react-native-elements';
 import Menu from "./Menu";
 import { DishDetail } from "./DishComponent";
 
+//just for top bar
+import AboutComponent from "./AboutComponent";
+import ContactComponent from "./ContactComponent";
+
 //navigation
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
@@ -16,6 +20,8 @@ const MainNavigator = createStackNavigator(
     {
         Menu: { screen: Menu },
         DishDetail: { screen: DishDetail },
+        AboutComponent: {screen: AboutComponent},
+        ContactComponent: {screen: ContactComponent}
     },
     {
         initialRouteName: 'Menu',
