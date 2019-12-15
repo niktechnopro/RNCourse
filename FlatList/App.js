@@ -10,43 +10,43 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
-  Text,
 } from 'react-native';
-import Menu from "./components/Menu";
-import { DishDetail } from "./components/DishComponent";
+import Settings from "./components/Settings";
+import MenuContainer from "./components/MenuContainer";
+import Home from "./components/Home";
 
 //navigation
-import { createStackNavigator } from "react-navigation-stack";
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createAppContainer } from "react-navigation";
 
 
-const MainNavigator = createStackNavigator({
-    Menu: { screen: Menu },
-    DishDetail: { screen: DishDetail }
+const MyDrawerNavigator = createDrawerNavigator({
+    Home: { screen: Home },//not really need navigationOptions, because we use static inside component
+    Menu: { screen: MenuContainer },
+    Settings: { screen: Settings,
+      navigationOptions: {
+        title: 'Settings',
+        drawerLabel: 'Settings'
+      }, 
+    },
   },
   {
-    initialRouteName: "Menu",
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: "#512DA8"
-      },
-      headerTintColor: "#fff",
-      headerTitleStyle: {
-        color: "#fff"
-      }
-    }
-})
+    drawerWidth: 150,//this is a drawer config
+    drawerBackgroundColor: "#D1C4E9",
+    drawerType: "front" //default
+  }
+);
 
-const AppNavigator = createAppContainer(MainNavigator);
+const MyApp = createAppContainer(MyDrawerNavigator);
 
 
 const App: () => React$Node = () => {
   return (
     <>
       <View style={styles.body}>
-        <AppNavigator />
+        {/* <AppNavigator /> */}
+        <MyApp />
       </View>
     </>
   );

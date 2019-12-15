@@ -8,6 +8,7 @@ import {
 import { ListItem } from 'react-native-elements';
 import { DISHES } from '../assets/dishes';
 
+
 class Menu extends Component{
     constructor(){
         super();
