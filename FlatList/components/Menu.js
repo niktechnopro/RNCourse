@@ -7,8 +7,6 @@ import {
 } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { DISHES } from '../assets/dishes';
-import {NavigationEvents} from "react-navigation";
-
 
 class Menu extends Component{
     constructor(){
