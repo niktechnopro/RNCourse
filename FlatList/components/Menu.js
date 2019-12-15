@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { DISHES } from '../assets/dishes';
+import {NavigationEvents} from "react-navigation";
 
 
 class Menu extends Component{
@@ -42,12 +43,14 @@ class Menu extends Component{
         )
     }
 
-   
+    // componentDidMount = () => {
+    //     <NavigationEvents onDidFocus={()=>console.log("Hello, I'm focused!")} />
+    // }
     render(){
         return(
-            <View style={{ flex: 1 }}>
+            // <View style={{ flex: 1, borderColor: "green", borderWidth: 4 }}>
                 <View
-                style={{flex: 1}}
+                    style={{flex: 1}}
                 >
                     <FlatList
                     data={this.state.dishes}
@@ -55,7 +58,7 @@ class Menu extends Component{
                     renderItem={this.renderMenuItem}
                     />
                 </View>
-            </View>
+            // </View>
         );
     }
     

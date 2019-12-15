@@ -28,7 +28,7 @@ function RenderDish(props){
 }
 
 
-export default class DishDetail extends Component{
+export class DishDetail extends Component{
     constructor(props){
         super();
         this.state = {

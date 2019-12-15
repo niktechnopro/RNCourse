@@ -45,7 +45,7 @@ const App: () => React$Node = () => {
   return (
     <>
       <View style={styles.body}>
-        {/* <AppNavigator /> */}
+        {/* <MenuContainer /> */}
         <MyApp />
       </View>
     </>
